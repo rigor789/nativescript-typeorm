@@ -1,4 +1,4 @@
-const { IgnorePlugin } = require("webpack");
+// const { IgnorePlugin } = require("webpack");
 const webpack = require("@nativescript/webpack");
 
 module.exports = (env) => {
