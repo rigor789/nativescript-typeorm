@@ -13,21 +13,22 @@ module.exports = (env) => {
     config.output.set("clean", true);
     config.output.library("typeorm").libraryTarget("umd").globalObject("this");
 
-    config.plugin("IgnorePlugin").use(IgnorePlugin, [
-      {
-        checkResource(resource) {
-          const ignores = [/capacitor/, /cordova/, /expo/, /react-native/];
+    // config.plugin("IgnorePlugin").use(IgnorePlugin, [
+    //   {
+    //     checkResource(resource) {
+    //       const ignores = [/capacitor/, /cordova/, /expo/, /react-native/];
 
-          const shouldIgnore = ignores.some((ignoreRe) => {
-            return resource.match(ignoreRe);
-          });
+    //       const shouldIgnore = ignores.some((ignoreRe) => {
+    //         return resource.match(ignoreRe);
+    //       });
 
-          if (shouldIgnore) {
-            return true;
-          }
-        },
-      },
-    ]);
+    //       if (shouldIgnore) {
+    //         console.log("IGNORE - ", resource);
+    //         return true;
+    //       }
+    //     },
+    //   },
+    // ]);
   });
 
   // tsc --declaration --emitDeclarationOnly
