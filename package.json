@@ -1,0 +1,21 @@
+{
+  "name": "nativescript-typeorm",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepare": "patch-package",
+    "build": "nativescript-webpack build && yarn build:dts",
+    "build:dts": "tsc --declaration --emitDeclarationOnly --declarationDir ./dist ./src/index.ts",
+    "prepack": "yarn build"
+  },
+  "devDependencies": {
+    "@nativescript/webpack": "^5.0.6",
+    "patch-package": "^6.4.7",
+    "typeorm": "^0.2.45",
+    "typescript": "^4.6.2"
+  }
+}
